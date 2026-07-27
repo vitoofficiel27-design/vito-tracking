@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Suivi de commande Vito</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background: #111;
+            color: white;
+            text-align: center;
+            padding: 40px;
+        }
+
+        .box {
+            background: #222;
+            padding: 30px;
+            border-radius: 15px;
+            max-width: 500px;
+            margin: auto;
+        }
+
+        input {
+            padding: 12px;
+            width: 80%;
+            margin: 10px;
+            border-radius: 8px;
+            border: none;
+        }
+
+        button {
+            padding: 12px 25px;
+            border-radius: 8px;
+            border: none;
+            cursor: pointer;
+            background: white;
+        }
+
+        #resultat {
+            margin-top: 20px;
+            font-size: 18px;
+        }
+    </style>
+</head>
+
+<body>
+
+<div class="box">
+    <h1>Vito - Suivi de commande</h1>
+
+    <p>Entre ton numéro de commande :</p>
+
+    <input id="commande" placeholder="Exemple : VITO001">
+
+    <br>
+
+    <button onclick="chercher()">Rechercher</button>
+
+    <div id="resultat"></div>
+</div>
+
+
+<script>
+function chercher() {
+
+    let numero = document.getElementById("commande").value;
+
+    if(numero == "VITO001") {
+        document.getElementById("resultat").innerHTML =
+        "Commande trouvée ✅<br>Statut : En préparation";
+    }
+
+    else {
+        document.getElementById("resultat").innerHTML =
+        "Commande introuvable ❌";
+    }
+
+}
+</script>
+
+</body>
+</html>
